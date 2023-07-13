@@ -1,3 +1,5 @@
 # Contributing to this repo
 
-Please just use pull requests so others can review the code before merging. Create a unique branch for every contributor
+If you are making huge changes, consider merging your changes to your own branch and opening a pull request. Other people can review your changes this way
+
+If it's something small, like a typo fix, you can commit directly to `main`
