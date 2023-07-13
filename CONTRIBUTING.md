@@ -1,1 +1,3 @@
-Please submit changes through pull requests ([this thing](https://github.com/themysticsavages/tomatoesnearme/pulls))
+# Contributing to this repo
+
+Please just use pull requests so others can review the code before merging. Create a unique branch for every contributor
