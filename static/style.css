@@ -1,6 +1,6 @@
 .banner{
     margin:0;
-    background-image: url("../assets/fruitsandveg.jpeg");
+    background-image: url("/static/fruitsandveg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
