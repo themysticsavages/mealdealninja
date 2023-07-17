@@ -8,11 +8,19 @@ Make sure you have a recent version of [Python](https://www.python.org/downloads
 
 Then do the following:
 
+**Windows Powershell**:
+
 ```bash
 python -m venv env
-# on windows powershell
 .\env\Scripts\activate
-# on mac
+pip install -r requirements.txt
+flask run
+```
+
+**Mac OS / Linux**:
+
+```
+python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 flask run
