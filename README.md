@@ -6,6 +6,12 @@ Name is subject to change
 
 Make sure you have a recent version of [Python](https://www.python.org/downloads/).
 
+Also make sure you have the latest version of the main branch:
+
+```bash
+git pull
+```
+
 Then do the following:
 
 **Windows Powershell**:
