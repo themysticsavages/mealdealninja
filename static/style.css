@@ -1,5 +1,4 @@
 .banner{
-    margin:0;
     background-image: url("/static/fruitsandveg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,11 +8,10 @@
     color:aliceblue;
     text-shadow:2px 2px 4px black;
     text-align: center;
-    padding: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     width: 100%;
     position: fixed;
-    top: 0; 
-    margin-left:0px;
 }
 
 body{
