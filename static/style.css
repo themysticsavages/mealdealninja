@@ -58,14 +58,16 @@ body {
 .input-box {
     float: left;
     font-family: 'Source Sans Pro', sans-serif;
-    display: flex;
-    height: 100vh; /* Full-height: remove this if you want "auto" height */
+    /*display: flex;*/
+    height: 200px;
     width: 200px;
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-x: hidden;
     padding: 20px;
     padding-top: 40px;
     padding-bottom: 40px;
     border-right: 1.5px solid rgb(168,183,198);
+    border-bottom: 1.5px solid rgb(168,183,198);
+    
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
