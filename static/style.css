@@ -22,6 +22,8 @@ nav {
     padding: 0;
     overflow: hidden;
     background-color: #f48aa0;
+    box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgb(168,183,198);
 }
 li {
     float:left;
@@ -56,7 +58,6 @@ body {
 .input-box {
     float: left;
     font-family: 'Source Sans Pro', sans-serif;
-    text-align: center;
     display: flex;
     height: 100vh; /* Full-height: remove this if you want "auto" height */
     width: 200px;
@@ -64,7 +65,8 @@ body {
     padding: 20px;
     padding-top: 40px;
     padding-bottom: 40px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-right: 1.5px solid rgb(168,183,198);
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 /* Hides arrows in Chrome, Safari, Edge, Opera */
@@ -73,17 +75,12 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-#budget{
-    margin-top: 50px;
-    padding: 5px;
-}
 .submitbutton{
     color:#fff;
     font-weight: bold;
     background-color: #f48aa0;
     border: 1px solid #ccc;
     padding:10px;
-    margin-top: 5px;
 }
 .submitbutton:active{
     background-color: #fff;
@@ -95,9 +92,26 @@ input::-webkit-inner-spin-button {
     display: flex;
 }
 .cards{
-    width:30rem;
+    width:200px;
     background-color: #ccc;
+    border-radius: 10px;
+    margin: 20px;
+}
+.cards-text{
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.cards-text h4{
+    padding: 1rem 0;
+    font-size: 25px;
 }
 .img-con img{
     width:100%;
+    border-radius: 10px;
+}
+.cards-padding-con{
+    padding: .5rem;
+}
+.cards-cost{
+    font-size: 15px;
 }
