@@ -1,32 +1,60 @@
 .banner{
-    background-image: url("/static/fruitsandveg.jpeg");
+    background-image: url("/static/MDN_logo.JPG");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 300px;
     background-position: center;
-    font-family: Optima, sans-serif;
-    font-size: 200%;
-    color:aliceblue;
-    text-shadow:2px 2px 4px black;
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    background-color: #f48aa0;
+    margin: 0;
+    padding-top: 75px;
+    padding-bottom: 75px;
     width: 100%;
-    position: fixed;
+    top:0;
 }
-
-body{
+/* NAV */
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f48aa0;
+}
+li {
+    float:left;
+    border-right: 1.5px solid #fff;
+}
+li:last-child {
+    border-right: none;
+    border-left: 1.5px solid #fff;
+}
+li a {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: rgb(168,183,198);
+    color:#000;
+}
+.active {
+    background-color: #fff;
+    color: #000;
+}
+/* body */
+body {
     margin:0;
 }
 
 /* The input menu */
 .input-box {
+    float: left;
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
-    height: auto; /* Full-height: remove this if you want "auto" height */
+    display: flex;
+    height: 100vh; /* Full-height: remove this if you want "auto" height */
     width: 200px;
-    position: fixed;
-    margin-top: 130px;
-    margin-left:10px;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding: 20px;
     padding-top: 40px;
@@ -40,12 +68,19 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
+#budget{
+    margin-top: 50px;
+    padding: 5px;
+}
 .submitbutton{
-    background-color: aquamarine;
+    color:#fff;
+    font-weight: bold;
+    background-color: #f48aa0;
     border: 1px solid #ccc;
+    padding:10px;
+    margin-top: 5px;
 }
 .submitbutton:active{
     background-color: #fff;
+    color:rgb(168,183,198);
 }
-
