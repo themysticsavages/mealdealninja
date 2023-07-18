@@ -1,6 +1,6 @@
-# tomatoesnearme
+# MealDealNinja
 
-Name is subject to change
+The app of all time in the time of all the times in time
 
 ## How to run
 
