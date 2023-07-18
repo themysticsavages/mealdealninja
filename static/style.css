@@ -1,3 +1,8 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
 .banner{
     background-image: url("/static/MDN_logo.JPG");
     background-repeat: no-repeat;
@@ -83,4 +88,16 @@ input::-webkit-inner-spin-button {
 .submitbutton:active{
     background-color: #fff;
     color:rgb(168,183,198);
+}
+
+/* Cards*/
+.cards-con{
+    display: flex;
+}
+.cards{
+    width:30rem;
+    background-color: #ccc;
+}
+.img-con img{
+    width:100%;
 }
