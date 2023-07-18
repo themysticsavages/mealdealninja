@@ -34,7 +34,6 @@ li:last-child {
     border-left: 1.5px solid #fff;
 }
 li a {
-    font-family: 'Source Sans Pro', sans-serif;
     display: block;
     color: white;
     text-align: center;
@@ -52,14 +51,14 @@ li a:hover {
 /* body */
 body {
     margin:0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* The input menu */
 .input-box {
     float: left;
-    font-family: 'Source Sans Pro', sans-serif;
     /*display: flex;*/
-    height: 200px;
+    height: 100vh;
     width: 200px;
     overflow-x: hidden;
     padding: 20px;
@@ -92,6 +91,7 @@ input::-webkit-inner-spin-button {
 /* Cards*/
 .cards-con{
     display: flex;
+    flex-wrap: wrap;
 }
 .cards{
     width:200px;
@@ -101,7 +101,6 @@ input::-webkit-inner-spin-button {
 }
 .cards-text{
     text-align: center;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 .cards-text h4{
     padding: 1rem 0;
@@ -116,4 +115,16 @@ input::-webkit-inner-spin-button {
 }
 .cards-cost{
     font-size: 15px;
+}
+
+/* About Style */
+.box{
+    align-items: center;
+    width: 80%;
+    height: fit-content;
+    background-color:#ccc;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
