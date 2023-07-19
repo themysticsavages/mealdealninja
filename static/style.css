@@ -1,3 +1,7 @@
+:root {
+    --pink: #f48aa0;
+    --gray: rgb(168,183,198);
+}
 * {
     padding:0;
     margin:0;
@@ -9,7 +13,7 @@
     background-repeat: no-repeat;
     background-size: 300px;
     background-position: center;
-    background-color: #f48aa0;
+    background-color: var(--pink);
     margin: 0;
     padding-top: 75px;
     padding-bottom: 75px;
@@ -22,16 +26,16 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #f48aa0;
-    border-bottom: 2px solid rgb(168,183,198);
+    background-color: var(--pink);
+    border-bottom: 2px solid var(--gray);
 }
 li {
     float:left;
-    border-right: 1.5px solid #fff;
+    border-right: 1.5px solid white;
 }
 li:last-child {
     border-right: none;
-    border-left: 1.5px solid #fff;
+    border-left: 1.5px solid white;
 }
 li a {
     display: block;
@@ -41,12 +45,15 @@ li a {
     text-decoration: none;
 }
 li a:hover {
-    background-color: rgb(168,183,198);
-    color:#000;
+    background-color: var(--gray);
+    color: black;
 }
 .active {
-    background-color: #fff;
-    color: #000;
+    background-color: white;
+    color: black;
+}
+.githublogo{
+    height:15px;
 }
 /* body */
 body {
@@ -55,6 +62,7 @@ body {
 }
 
 /* The input menu */
+
 .input-box{
     display:flex;
     align-items: center;
@@ -62,7 +70,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     padding: 15px;
-    border-bottom: 1.5px solid rgb(168,183,198);
+    border-bottom: 1.5px solid var(--gray);
     box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.5);
 }
 .input-box p {
@@ -91,16 +99,16 @@ input::-webkit-inner-spin-button {
 }
 
 .submitbutton{
-    color:#fff;
+    color: white;
     font-weight: bold;
-    background-color: #f48aa0;
-    border: 1px solid #ccc;
+    background-color: var(--pink);
+    border: 1px solid var(--gray);
     padding:10px;
 }
 
 .submitbutton:active{
-    background-color: #fff;
-    color:#000;
+    background-color: white;
+    color: black;
 }
 
 /* Cards*/
@@ -110,7 +118,7 @@ input::-webkit-inner-spin-button {
 }
 .cards{
     width:200px;
-    background-color: #ccc;
+    background-color: var(--gray);
     border-radius: 10px;
     margin: 20px;
 }
@@ -137,7 +145,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
     width: 80%;
     height: fit-content;
-    background-color:#ccc;
+    background-color: var(--gray);
     margin: auto;
     margin-top: 20px;
     padding: 10px;
