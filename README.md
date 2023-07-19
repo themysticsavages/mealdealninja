@@ -14,6 +14,7 @@ git pull
 git checkout <your branch>
 git merge main
 ```
+flask run
 
 Then do the following:
 
@@ -35,4 +36,4 @@ pip3 install -r requirements.txt
 flask run
 ```
 
-The app should be running on [http://localhost:5000](http://localhost:5000)
+The app should be running on [://localhoshttpt:5000](http://localhost:5000)
