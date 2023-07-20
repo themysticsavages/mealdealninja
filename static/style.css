@@ -8,18 +8,71 @@
     box-sizing:border-box;
 }
 
-.banner{
-    background-image: url("/static/MDN_logo.JPG");
-    background-repeat: no-repeat;
-    background-size: 300px;
-    background-position: center;
+/* Center the input box next to the logo on the left */
+.banner {
+    display: flex;
+    align-items: center;
     background-color: var(--pink);
     margin: 0;
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
-    top:0;
+    top: 0;
+    position: relative;
 }
+  
+  /* Add styles for the logo */
+.banner .logo {
+    height: auto; /* Allow the logo to scale proportionally */
+    margin-right: 20px;
+}
+  
+  /* Center the input box vertically within the banner */
+.input-box {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allow the input box to grow and fill the available space */
+}
+  
+  /* Adjust the form's width to accommodate both the input and submit button */
+.input-box form {
+    display:flex;
+    align-items: center;
+    width: 100%;
+}
+  
+  /* Center the submit button */
+.input-box .submitbutton {
+    margin-left: 10px;
+}  
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.submitbutton{
+    color: var(--pink);
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    /* background-color: var(--pink);
+    border: 1px solid var(--gray); */
+    padding:10px;
+}
+
+.submitbutton:active{
+    background-color: var(--pink);
+    color: white;
+    border: 1px solid white
+}
+
+.input-input-box {
+    height: 37.5px;
+    width: 50%;
+}
+
 /* NAV */
 nav {
     list-style-type: none;
@@ -28,6 +81,7 @@ nav {
     overflow: hidden;
     background-color: var(--pink);
     border-bottom: 2px solid var(--gray);
+    box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.5);
 }
 li {
     float:left;
@@ -61,55 +115,6 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-/* The input menu */
-
-.input-box{
-    display:flex;
-    align-items: center;
-    height:auto;
-    width: 100%;
-    overflow-x: hidden;
-    padding: 15px;
-    border-bottom: 1.5px solid var(--gray);
-    box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.5);
-}
-.input-box p {
-    margin-right: 10px;
-}
-.input-box form {
-    display: flex;
-    align-items: center;
-}
-.input-box label {
-    margin-right: 5px;
-}
-
-.input-box input[type="number"] {
-    width: 75px;
-}
-
-.input-box .submitbutton {
-    margin-left: 10px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.submitbutton{
-    color: white;
-    font-weight: bold;
-    background-color: var(--pink);
-    border: 1px solid var(--gray);
-    padding:10px;
-}
-
-.submitbutton:active{
-    background-color: white;
-    color: black;
-}
 
 /* Cards*/
 .cards-con{
