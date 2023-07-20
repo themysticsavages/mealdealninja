@@ -1,6 +1,7 @@
 :root {
     --pink: #f48aa0;
     --gray: rgb(168,183,198);
+    --font: 'Source Sans Pro', sans-serif;
 }
 * {
     padding:0;
@@ -83,22 +84,22 @@ nav {
     border-bottom: 2px solid var(--gray);
     box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.5);
 }
-li {
+nav li {
     float:left;
     border-right: 1.5px solid white;
 }
-li:last-child {
+nav li:last-child {
     border-right: none;
     border-left: 1.5px solid white;
 }
-li a {
+nav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover {
+nav li a:hover {
     background-color: var(--gray);
     color: black;
 }
@@ -112,7 +113,7 @@ li a:hover {
 /* body */
 body {
     margin:0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: var(--font);
 }
 
 
@@ -122,7 +123,7 @@ body {
     flex-wrap: wrap;
 }
 .cards{
-    width:200px;
+    width:250px;
     background-color: var(--gray);
     border-radius: 10px;
     margin: 20px;
@@ -155,4 +156,21 @@ body {
     margin-top: 20px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Recipe Info Page */
+.box h1{
+    margin: 20px;
+}
+.box li, .box h2, .box p {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.recipe-img {
+    display:flex;
+    align-items: center;
+    width:90%;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom:20px;
 }
