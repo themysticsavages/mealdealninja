@@ -1,7 +1,11 @@
 from flask import Flask, render_template
+from flask_ngrok import run_with_ngrok
+
+import pandas as pd
+
 
 app = Flask(__name__)
-
+run_with_ngrok(app)
 
 @app.get("/")
 def home():
@@ -26,3 +30,6 @@ def recipeinfo():
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template("404.html", title="Not found")
+
+if __name__ == "__main__":
+    app.run()
