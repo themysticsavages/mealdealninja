@@ -1,11 +1,13 @@
 :root {
     --pink: #f48aa0;
-    --gray: rgb(168,183,198);
+    --gray: rgb(168, 183, 198);
+    --font: 'Source Sans Pro', sans-serif;
 }
+
 * {
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /* Center the input box next to the logo on the left */
@@ -20,31 +22,33 @@
     top: 0;
     position: relative;
 }
-  
-  /* Add styles for the logo */
+
+/* Add styles for the logo */
 .banner .logo {
-    height: auto; /* Allow the logo to scale proportionally */
+    height: auto;
+    /* Allow the logo to scale proportionally */
     margin-right: 20px;
 }
-  
-  /* Center the input box vertically within the banner */
+
+/* Center the input box vertically within the banner */
 .input-box {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Allow the input box to grow and fill the available space */
+    flex-grow: 1;
+    /* Allow the input box to grow and fill the available space */
 }
-  
-  /* Adjust the form's width to accommodate both the input and submit button */
+
+/* Adjust the form's width to accommodate both the input and submit button */
 .input-box form {
-    display:flex;
+    display: flex;
     align-items: center;
     width: 100%;
 }
-  
-  /* Center the submit button */
+
+/* Center the submit button */
 .input-box .submitbutton {
     margin-left: 10px;
-}  
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -52,17 +56,17 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.submitbutton{
+.submitbutton {
     color: var(--pink);
     font-weight: bold;
     background-color: white;
     border: none;
     /* background-color: var(--pink);
     border: 1px solid var(--gray); */
-    padding:10px;
+    padding: 10px;
 }
 
-.submitbutton:active{
+.submitbutton:active {
     background-color: var(--pink);
     color: white;
     border: 1px solid white
@@ -83,70 +87,90 @@ nav {
     border-bottom: 2px solid var(--gray);
     box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.5);
 }
-li {
-    float:left;
+
+nav li {
+    float: left;
     border-right: 1.5px solid white;
 }
-li:last-child {
+
+nav li:last-child {
     border-right: none;
     border-left: 1.5px solid white;
 }
-li a {
+
+nav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover {
+
+nav li a:hover {
     background-color: var(--gray);
     color: black;
 }
+
 .active {
     background-color: white;
     color: black;
 }
-.githublogo{
-    height:15px;
+
+.githublogo {
+    height: 15px;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /* body */
 body {
-    margin:0;
-    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    font-family: var(--font);
 }
 
+.content {
+    margin: 20px;
+}
 
 /* Cards*/
-.cards-con{
+.cards-con {
     display: flex;
     flex-wrap: wrap;
 }
-.cards{
-    width:200px;
+
+.cards {
+    width: 250px;
     background-color: var(--gray);
     border-radius: 10px;
-    margin: 20px;
 }
-.cards-text{
+
+.cards-text {
     text-align: center;
 }
-.cards-text h4{
+
+.cards-text h4 {
     padding: 1rem 0;
     font-size: 25px;
 }
-.img-con img{
-    width:100%;
+
+.img-con img {
+    width: 100%;
     border-radius: 10px;
 }
-.cards-padding-con{
+
+.cards-padding-con {
     padding: .5rem;
 }
-.cards-cost{
+
+.cards-cost {
     font-size: 15px;
 }
 
 /* About Style */
-.box{
+.box {
     align-items: center;
     width: 80%;
     height: fit-content;
@@ -155,4 +179,25 @@ body {
     margin-top: 20px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Recipe Info Page */
+.box h1 {
+    margin: 20px;
+}
+
+.box li,
+.box h2,
+.box p {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.recipe-img {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meal Deal Ninja | {{ title }}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header class="banner">
+        <div class="logo">
+            <a href="/"><img src="/static/MDN_new_logo.png" alt="Logo" style="width: 200px;"></a>
+        </div>
+    </header>
+    <nav>
+        <li><a class="{% block home %}{% endblock home %}" href="/">Home</a></li>
+        <li><a class="{% block stats %}{% endblock stats %}" href="/stats">Stats <i class="fa fa-bar-chart "></i></a>
+        </li>
+        <li><a href="https://github.com/themysticsavages/mealdealninja" target="_blank">Github <i
+                    class="fa fa-github"></i></a></li>
+        <li style="float:right"><a class="{% block about %}{% endblock about %}" href="/about">About</a></li>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock content %}
+    </div>
+</body>
