@@ -12,6 +12,7 @@ def dataframe():
     """Return a cached dataframe to possibly load faster"""
     df = pd.read_csv("data/200recipes.csv", index_col="Unnamed: 0")
     df["index"] = df.index
+    df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
     return df
 
 
