@@ -1,36 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block about %}active{% endblock about %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Deal Ninja | About</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-
-<body>
-    <header class="banner"></header>
-    <nav>
-        <li><a href="/">Home</a></li>
-        <li><a href="/stats">Stats</a></li>
-        <li><a href="#">Place Holder</a></li>
-        <li class="active" style="float:right"><a href="/about">About</a></li>
-    </nav>
-    <div class="box">
-        <h1>About us ninjas</h1>
-        <p>MEAL DEAL NINJA is about making nuritional, affordable recipes for those who struggle with <b> FOOD
-                INSECURITY</b>. We focus
-            on recipes that can range from vegan, dairy free, and gluten free. The range of recipes also provide the
-            amount of calories the meal is. Our main
-            motivation to create a program was due to the inaccessiable food options for those who can not afford to a
-            sustainable food plan.
-            Food insercurity is a serious health issue that is not commonly talked about in the media. We hope to raise
-            awareness to this health issue and help people overcome their inaccessiability to healthy and nuritional
-            food.
-            <a href="https://www.feedingamerica.org/hunger-in-america/food-insecurity" target="_blank">Check out this
-                link to find more about food insecurity.</a>
-        </p>
-    </div>
-</body>
-
-</html>
+{% block content %}
+<div class="box">
+    <h1>About us ninjas</h1>
+    <p>MEAL DEAL NINJA is about making nuritional, affordable recipes for those who struggle with <b> FOOD
+            INSECURITY</b>. We focus
+        on recipes that can range from vegan, dairy free, and gluten free. The range of recipes also provide the
+        amount of calories the meal is. Our main
+        motivation to create a program was due to the inaccessiable food options for those who can not afford to a
+        sustainable food plan.
+        Food insercurity is a serious health issue that is not commonly talked about in the media. We hope to raise
+        awareness to this health issue and help people overcome their inaccessiability to healthy and nuritional
+        food.
+        <a href="https://www.feedingamerica.org/hunger-in-america/food-insecurity" target="_blank">Check out this
+            link to find more about food insecurity.</a>
+    </p>
+</div>
+{% endblock content %}
