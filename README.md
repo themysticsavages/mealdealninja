@@ -1,6 +1,10 @@
+<div align="center">
+<img src="static/logo.png">
+</div>
+
 # MealDealNinja
 
-The app of all time in the time of all the times in time
+A solution to food insecurity by providing simple budget-friendly meals
 
 ## How to run
 
@@ -44,5 +48,3 @@ If you want to edit a page, just edit stuff inside:
 here
 {% endblock content %}
 ```
-
-The navbar and CSS and stuff loads with every page now :rocket:
