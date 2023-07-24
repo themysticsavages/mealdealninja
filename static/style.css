@@ -199,7 +199,7 @@ body {
     margin-bottom: 15px;
 }
 
-.about-content p{
+.about-content p {
     font-size: 18px;
     text-indent: 50px;
     line-height: 1.8;
@@ -212,4 +212,18 @@ body {
     max-width: 600px;
     margin: auto;
     margin-bottom: 20px;
+}
+
+.easter-egg {
+    display: inline-block;
+}
+
+.easter-egg::after {
+    content: "About";
+}
+
+.easter-egg:hover::after {
+    content: "About us ninjas";
+    background-color: black;
+    color: white
 }
