@@ -192,6 +192,11 @@ body {
     margin-left: 20px;
     margin-bottom: 15px;
 }
+.about-content {
+    font-size: 18px;
+    text-indent: 50px;
+    line-height: 1.8;
+}
 
 .recipe-img {
     display: flex;
