@@ -4,15 +4,17 @@
 {% block content %}
 <div class="cards-con">
     <div class="cards">
+        {% for card in cards %}
         <div class="cards-padding-con">
             <div class="img-con">
                 <a href="/recipeinfo"><img src="/static/placeholderimg.jpeg" alt=""></a>
             </div>
             <div class="cards-text">
-                <h4>Recipe Title</h4>
-                <p class="cards-cost">Cost: $</p>
+                <h4>{{ card["title"] }}</h4>
+                <p class="cards-cost">Cost: ${{ card["cost"] }}</p>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
