@@ -180,9 +180,8 @@ body {
     align-items: center;
     width: 80%;
     height: fit-content;
-    background-color: var(--gray);
+    background-color: #fffafa;
     margin: auto;
-    margin-top: 20px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -226,4 +225,23 @@ body {
     content: "About us ninjas";
     background-color: black;
     color: white
+}
+
+.box-con {
+    display: flex;
+    gap: 10px;
+}
+
+.goofy {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.goofy h1 {
+    text-align: center;
+    padding: 0;
+}
+
+.goofy ul {
+    list-style: none;
 }

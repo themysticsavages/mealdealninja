@@ -16,6 +16,7 @@ def dataframe():
 
 
 app = Flask(__name__)
+app.jinja_env.globals.update(zip=zip)
 run_with_ngrok(app)
 
 
@@ -51,6 +52,7 @@ def recipeinfo(recipe_id):
             pass
         except SyntaxError:
             pass
+    print(item)
 
     return render_template("recipe.html", title="Recipe info", data=item)
 
