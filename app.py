@@ -48,11 +48,10 @@ def cards():
         df = df[df["Price"] < budget]
     df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
     df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
-    print(offset, limit)
+
     cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[
         offset:limit
     ]
-    print(cards)
     return render_template("cards.html", cards=cards)
 
 
@@ -79,7 +78,6 @@ def recipeinfo(recipe_id):
             pass
         except SyntaxError:
             pass
-    print(item)
 
     return render_template("recipe.html", title="Recipe info", data=item)
 
