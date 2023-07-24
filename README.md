@@ -17,23 +17,32 @@ git merge main
 
 Then do the following:
 
-**Windows Powershell**:
+**Windows Git Bash**:
 
 ```bash
 python -m venv env
-.\env\Scripts\activate
+source ./env/scripts/activate
 pip install -r requirements.txt
 flask run
 ```
 
 **Mac OS / Linux**:
 
-```
+```bash
 python3 -m venv env
 source env/bin/activate
 pip3 install -r requirements.txt
 flask run
 ```
 
-The app should be running on [http: //localhost:5000](0)
-http://localhost:500
+The app should be running on [local host five thousand](http://localhost:5000)
+
+If you want to edit a page, just edit stuff inside:
+
+```
+{% block content %}
+here
+{% endblock content %}
+```
+
+The navbar and CSS and stuff loads with every page now :rocket:
