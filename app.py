@@ -1,7 +1,7 @@
 from functools import cache
 from ast import literal_eval
 
-from flask import Flask, render_template, send_from_directory, request
+from flask import Flask, render_template, request
 from flask_ngrok import run_with_ngrok
 
 import pandas as pd
@@ -21,12 +21,39 @@ app.jinja_env.globals.update(zip=zip)
 run_with_ngrok(app)
 
 
-@app.get("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
+    budget = request.args.get("budget", type=float)
     df = dataframe()
-    df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
-    cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
+    if not budget:
+        df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
+        df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
+        cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
+    else:
+        df = df[df["Price"] < budget]
+        df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
+        df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
+        cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
     return render_template("index.html", title="Home", cards=cards)
+
+
+@app.get("/cards")
+def cards():
+    limit = request.args.get("limit", type=int)
+    offset = request.args.get("offset", type=int, default=0)
+    budget = request.args.get("budget", type=int)
+
+    df = dataframe()
+    if budget is not None:
+        df = df[df["Price"] < budget]
+    df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
+    df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
+    print(offset, limit)
+    cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[
+        offset:limit
+    ]
+    print(cards)
+    return render_template("cards.html", cards=cards)
 
 
 @app.get("/about")
@@ -55,18 +82,6 @@ def recipeinfo(recipe_id):
     print(item)
 
     return render_template("recipe.html", title="Recipe info", data=item)
-
-
-@app.route('/budget', methods=['GET', 'POST'])
-def search():
-    if request.method == "POST":
-        df = dataframe()
-        budget = int(request.form.get("budget"))
-        df = df.loc[df.cost <= budget]
-        df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
-        cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
-        return render_template("index.html", title="Home", cards=cards)
-    return home()
 
 
 @app.errorhandler(404)
