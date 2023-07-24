@@ -180,7 +180,7 @@ body {
     align-items: center;
     width: 80%;
     height: fit-content;
-    background-color: var(--gray);
+    background-color: #fffafa;
     margin: auto;
     margin-top: 20px;
     padding: 10px;
