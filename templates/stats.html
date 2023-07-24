@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Deal Ninja | Statistics</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <header class="banner">
-        <div class="logo">
-            <a href="/"><img src="/static/MDN_new_logo.png" alt="Logo" style="width: 200px;"></a>
-        </div>
-    </header>
-    <nav>
-        <li><a href="/">Home</a></li>
-        <li><a class="active" href="/stats">Stats</a></li>
-        <li><a href="https://github.com/themysticsavages/mealdealninja" target="_blank">Github <img class="githublogo" src="/static/githubwhite.png"></a></li>
-        <li style="float:right"><a href="/about">About</a></li>
-    </nav>
-    <h1>Stats</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block stats %}active{% endblock stats %}
+
+{% block content %}
+<h1>Stats</h1>
+{% endblock content %}
