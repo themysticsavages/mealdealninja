@@ -14,6 +14,13 @@
         <div class="logo">
             <a href="/"><img src="/static/MDN_new_logo.png" alt="Logo" style="width: 200px;"></a>
         </div>
+        <div class="input-box">
+            <form>
+                <input type="number" placeholder="Enter Preferred Budget" step="0.01" id="budget" name="budget" required
+                    class="input-input-box">
+                <input type="submit" value="Find My Meal" class="submitbutton">
+            </form>
+        </div>
     </header>
     <nav>
         <li><a class="{% block home %}{% endblock home %}" href="/">Home</a></li>

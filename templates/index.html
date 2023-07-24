@@ -3,16 +3,19 @@
 
 {% block content %}
 <div class="cards-con">
+    {% for card in cards %}
     <div class="cards">
         <div class="cards-padding-con">
             <div class="img-con">
-                <a href="/recipeinfo"><img src="/static/placeholderimg.jpeg" alt=""></a>
+                <a href="/recipeinfo"><img src="{{ card[" image"] }}" alt="" loading="lazy"></a>
             </div>
             <div class="cards-text">
-                <h4>Recipe Title</h4>
-                <p class="cards-cost">Cost: $</p>
+                <h4>{{ card["title"] }}</h4>
+                <p class="cards-cost">Cost: ${{ card["cost"] }}</p>
             </div>
         </div>
     </div>
+    <br>
+    {% endfor %}
 </div>
 {% endblock content %}
