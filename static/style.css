@@ -1,6 +1,7 @@
 :root {
     --pink: #f48aa0;
     --gray: rgb(168, 183, 198);
+    --dark-gray: rgb(125, 132, 138);
     --font: 'Source Sans Pro', sans-serif;
 }
 
@@ -139,12 +140,15 @@ body {
 .cards-con {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cards {
     width: 250px;
     background-color: var(--gray);
     border-radius: 10px;
+    margin: 5px;
+    border: 1px solid var(--dark-gray);
 }
 
 .cards-text {
@@ -192,6 +196,7 @@ body {
     margin-left: 20px;
     margin-bottom: 15px;
 }
+
 .about-content {
     font-size: 18px;
     text-indent: 50px;

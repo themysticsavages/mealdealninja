@@ -1,6 +1,6 @@
 from functools import cache
 
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 from flask_ngrok import run_with_ngrok
 
 import pandas as pd
@@ -8,6 +8,7 @@ import pandas as pd
 
 @cache
 def dataframe():
+    """Return a cached dataframe to possibly load faster"""
     return pd.read_csv("data/200recipes.csv", index_col="Unnamed: 0")
 
 
@@ -17,9 +18,10 @@ run_with_ngrok(app)
 
 @app.get("/")
 def home():
-    df = dataframe().sort_values(by=["rating", "Price"], ascending=[False, True])
-    df.rename(columns={"Price": "cost"}, inplace=True)
-    cards = df[["title", "cost"]].to_dict(orient="records")[:10]
+    df = dataframe()
+    df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
+    df = df.rename(columns={"Price": "cost", "image": " image"})
+    cards = df[["title", "cost", " image"]].to_dict(orient="records")[:30]
     return render_template("index.html", title="Home", cards=cards)
 
 
