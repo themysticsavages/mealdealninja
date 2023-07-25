@@ -17,15 +17,15 @@
         </div>
         <div class="input-box">
             <form action="/">
-                <select id="sort" name="sort">
-                    <option value="" disabled selected hidden>Sort</option>
+                <select id="sort" name="sort" class="drop-down">
+                    <option value="">Sort</option>
                     <option value="plh">Price: Low to High</option>
                     <option value="phl">Price: High to Low</option>
                     <option value="rhl">Rating: High to low</option>
                     <option value="rlh">Rating: Low to High</option>
                 </select>
-                <label for="budget" style="color: white">$&nbsp;</label>
-                <input type="number" placeholder="Enter Preferred Budget" id="budget" name="budget" required
+                <!-- <label for="budget" style="color: white">$&nbsp;</label> -->
+                <input type="number" placeholder="Enter Preferred Budget ($)" id="budget" name="budget" required
                     class="input-input-box">
                 <input type="submit" value="Find My Meal" class="submitbutton">
             </form>
