@@ -1,8 +1,9 @@
 from functools import cache
 from ast import literal_eval
 
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, request
 from flask_ngrok import run_with_ngrok
+from flask_minify import Minify
 
 import pandas as pd
 
@@ -12,20 +13,45 @@ def dataframe():
     """Return a cached dataframe to possibly load faster"""
     df = pd.read_csv("data/200recipes.csv", index_col="Unnamed: 0")
     df["index"] = df.index
+    df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
     return df
 
 
 app = Flask(__name__)
+app.jinja_env.globals.update(zip=zip)
 run_with_ngrok(app)
+Minify(app=app, html=True, js=True, cssless=True)
 
 
-@app.get("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
+    budget = request.args.get("budget", type=float)
     df = dataframe()
-    df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
-    df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
-    cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
+    if not budget:
+        df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
+        cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
+    else:
+        df = df[df["cost"] < budget]
+        df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
+        cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
     return render_template("index.html", title="Home", cards=cards)
+
+
+@app.get("/cards")
+def cards():
+    limit = request.args.get("limit", type=int)
+    offset = request.args.get("offset", type=int, default=0)
+    budget = request.args.get("budget", type=int)
+
+    df = dataframe()
+    if budget is not None:
+        df = df[df["cost"] < budget]
+    df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
+
+    cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[
+        offset:limit
+    ]
+    return render_template("cards.html", cards=cards)
 
 
 @app.get("/about")
