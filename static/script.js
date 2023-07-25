@@ -5,7 +5,7 @@ function isScrollAtBottom() {
 function loadMoreData(offset, limit) {
     const contentElement = document.querySelector(".content");
     let params = new URLSearchParams(window.location.href.split("?")[1])
-    fetch(`/cards?budget=${params.get("budget")}&offset=${offset}&limit=${limit}`)
+    fetch(`/cards?sort=${params.get("sort")}&budget=${params.get("budget")}&offset=${offset}&limit=${limit}`)
         .then(res => res.text())
         .then(html => contentElement.innerHTML += html)
 }
