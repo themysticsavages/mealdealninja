@@ -104,6 +104,7 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    z-index: 3;
     position: sticky;
     top: 0;
     left: 0;
@@ -159,11 +160,20 @@ body {
 
 .cards {
     width: 250px;
+    position: relative;
     background-color: var(--gray);
     border-radius: 10px;
     margin: 5px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--dark-gray);
+    bottom: 0px;
+    rotate: 0deg;
+    transition: bottom 0.3s ease-in-out, rotate 0.3s ease-in-out;
+}
+
+.cards:hover {
+    bottom: 10px;
+    rotate: 3deg;
 }
 
 .cards-text {
