@@ -13,6 +13,7 @@
     </div>
     <div class="box goofy">
         <div>
+            <h1>${{ data["cost"] }}</h1>
             <h2>Ingredients</h2>
             <ul>
                 {% for ingredient, price in zip(data["ingredients"], data["Ing. Prices"]) %}
@@ -22,7 +23,7 @@
         </div>
         <div>
             <h2>Nutritional Facts</h2>
-            <table class="the-table">
+            <table class="the-table" style="width: 50%">
                 {% for metric, amount in data["Ing. Nutr"].items() %}
                 <tr>
                     <td>{{ metric.replace("_", " ").title() }}</td>
@@ -33,7 +34,11 @@
         </div>
     </div>
 </div>
-<div class="box-con">
-    funny
+<div class="box-con" style="width: 70%; margin: auto">
+    <div class="box goofy">
+        <h1>Instructions</h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aspernatur nulla deleniti rem nam ipsa
+        corporis voluptatum ipsam est nostrum! Culpa quia dolorem quidem, ratione rem autem cum enim repudiandae.
+    </div>
 </div>
 {% endblock content %}
