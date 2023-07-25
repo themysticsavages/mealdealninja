@@ -57,7 +57,13 @@
 
 /* Center the submit button */
 .input-box .submitbutton {
-    margin-left: 10px;
+    margin-left: 0px;
+    padding: 11px;
+}
+
+.input-box .submitbutton:hover {
+    background-color: var(--gray);
+    color: black;
 }
 
 input::-webkit-outer-spin-button,
@@ -89,6 +95,7 @@ input[type=number] {
 .input-input-box {
     height: 37.5px;
     width: 50%;
+    border: none;
 }
 
 /* NAV */
@@ -101,8 +108,7 @@ nav {
     top: 0;
     left: 0;
     background-color: var(--pink);
-    border-bottom: 2px solid var(--gray);
-    box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid var(--dark-pink);
 }
 
 nav li {
@@ -156,6 +162,7 @@ body {
     background-color: var(--gray);
     border-radius: 10px;
     margin: 5px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--dark-gray);
 }
 
@@ -256,6 +263,24 @@ body {
 
 .goofy ul {
     list-style: none;
+}
+
+.goofier {
+    width: 70%;
+    margin: auto;
+}
+
+.submitter {
+    /* Set the font size of the icon */
+    font-size: 20px;
+    /* Adjust the position to center the icon vertically */
+    position: relative;
+    top: 2px;
+    /* You might need to adjust this value to center the icon properly */
+    /* Set the color of the icon */
+    color: #007bff;
+    /* Add some margin-right to separate the icon from the button text */
+    margin-right: 5px;
 }
 
 .the-table {
