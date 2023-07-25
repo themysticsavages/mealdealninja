@@ -1,5 +1,6 @@
 :root {
     --pink: #f48aa0;
+    --dark-pink: #cf6c80;
     --gray: rgb(168, 183, 198);
     --dark-gray: rgb(125, 132, 138);
     --font: 'Source Sans Pro', sans-serif;
@@ -9,6 +10,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.silly-gradient-\:3 {
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5));
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Center the input box next to the logo on the left */
