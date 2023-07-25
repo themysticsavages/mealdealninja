@@ -3,6 +3,7 @@ from ast import literal_eval
 
 from flask import Flask, render_template, request
 from flask_ngrok import run_with_ngrok
+from flask_minify import Minify
 
 import pandas as pd
 
@@ -19,6 +20,7 @@ def dataframe():
 app = Flask(__name__)
 app.jinja_env.globals.update(zip=zip)
 run_with_ngrok(app)
+Minify(app=app, html=True, js=True, cssless=True)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -26,13 +28,11 @@ def home():
     budget = request.args.get("budget", type=float)
     df = dataframe()
     if not budget:
-        df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
-        df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
+        df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
         cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
     else:
-        df = df[df["Price"] < budget]
-        df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
-        df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
+        df = df[df["cost"] < budget]
+        df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
         cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
     return render_template("index.html", title="Home", cards=cards)
 
@@ -45,9 +45,8 @@ def cards():
 
     df = dataframe()
     if budget is not None:
-        df = df[df["Price"] < budget]
-    df = df.sort_values(by=["rating", "Price"], ascending=[False, True])
-    df = df.rename(columns={"Price": "cost", "image": " image", "index": " index"})
+        df = df[df["cost"] < budget]
+    df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
 
     cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[
         offset:limit
