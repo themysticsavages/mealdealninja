@@ -32,7 +32,7 @@ def home():
             "phl" : [["cost", "rating"],  [False, True]], 
             "rhl" : [["rating", "cost"],  [False, True]], 
             "rlh" : [["rating", "cost"],  [True, False]],
-              ""  : [["rating", "cost"],  [False, True]],
+              ""  : [["cost", "rating"],  [False, True]], 
             }
     df = dataframe()
     if not budget:
