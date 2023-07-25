@@ -1,17 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="box">
-    <h1>Recipe Title</h1>
-    <img class="recipe-img" src="/static/placeholderimg.jpeg" alt="Logo">
-    <ul>
-        <h2>Ingredients:</h2>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <h2>Instructions:</h2>
-    <p>Lorem ipsum dolor sit amet</p>
+<div class="box-con">
+    <div class="box goofy">
+        <div>
+            <div class="info">
+                <h1>{{ data["title"] }}</h1>
+                <p>{{ data["author"] }} • {{ data["date"] }}</p>
+            </div>
+            <img class="recipe-img" src="{{ data[' image'] }}" alt="Logo">
+        </div>
+    </div>
+    <div class="box goofy">
+        <div>
+            <h2>Ingredients</h2>
+            <ul>
+                {% for ingredient, price in zip(data["ingredients"], data["Ing. Prices"]) %}
+                <li>{{ ingredient }} ({{ price }})</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <h2>Nutritional Facts</h2>
+            <table class="the-table">
+                {% for metric, amount in data["Ing. Nutr"].items() %}
+                <tr>
+                    <td>{{ metric.replace("_", " ").title() }}</td>
+                    <td>{{ amount }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+<div class="box-con">
+    funny
 </div>
 {% endblock content %}
