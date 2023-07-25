@@ -98,6 +98,15 @@ input[type=number] {
     border: none;
 }
 
+.drop-down{
+    height: 37.5px;
+    background-color: white;
+    border: 1px solid var(--dark-gray);
+    border-right: none;
+    color: var(--dark-gray);
+    border-radius: 5px 0 0  5px;
+}
+
 /* NAV */
 nav {
     list-style-type: none;

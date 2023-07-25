@@ -26,13 +26,21 @@ Minify(app=app, html=True, js=True, cssless=True)
 @app.route("/", methods=["GET", "POST"])
 def home():
     budget = request.args.get("budget", type=float)
+    sort_type = request.args.get("sort", type = str)
+    sorts = {
+            "plh" :[["cost", "rating"],  [True, False]], 
+            "phl" : [["cost", "rating"],  [False, True]], 
+            "rhl" : [["rating", "cost"],  [False, True]], 
+            "rlh" : [["rating", "cost"],  [True, False]],
+              ""  : [["cost", "rating"],  [False, True]], 
+            }
     df = dataframe()
     if not budget:
         df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
         cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
     else:
         df = df[df["cost"] < budget]
-        df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
+        df = df.sort_values(by=sorts[sort_type][0], ascending=sorts[sort_type][1])        
         cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
     return render_template("index.html", title="Home", cards=cards)
 
