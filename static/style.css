@@ -75,7 +75,8 @@ input[type=number] {
     font-weight: bold;
     background-color: white;
     border: 1px solid var(--dark-gray);
-    padding: 10px;
+    padding: 0 10px;
+    height: 37.5px;
     border-left: none;
     border-radius: 0 5px 5px 0;
 }
@@ -136,7 +137,8 @@ nav li a {
 }
 
 nav li a:hover {
-    background-color: var(--gray);
+    background-color: #d1cfcf;
+    border: none;
     color: black;
 }
 
@@ -166,11 +168,11 @@ body {
 .cards {
     width: 250px;
     position: relative;
-    background-color: var(--gray);
+    background-color: #faf5f5;
     border-radius: 10px;
     margin: 5px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--dark-gray);
+    border: 1px solid #d1cfcf;
     bottom: 0px;
     rotate: 0deg;
     transition: bottom 0.3s ease-in-out, rotate 0.3s ease-in-out;
