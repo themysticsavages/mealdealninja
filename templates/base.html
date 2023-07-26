@@ -17,8 +17,14 @@
         </div>
         <div class="input-box">
             <form action="/">
-                <label for="budget" style="color: white">$&nbsp;</label>
-                <input type="number" placeholder="Enter Preferred Budget" id="budget" name="budget" required
+                <select id="sort" name="sort" class="drop-down">
+                    <option value="">Sort</option>
+                    <option value="plh">Price: Low to High</option>
+                    <option value="phl">Price: High to Low</option>
+                    <option value="rhl">Rating: High to low</option>
+                    <option value="rlh">Rating: Low to High</option>
+                </select>
+                <input type="number" placeholder="Enter Preferred Budget ($)" id="budget" name="budget" required
                     class="input-input-box">
                 <button type="submit" class="submitbutton"><i class="fa fa-search"></i> Find My Meal</button>
             </form>

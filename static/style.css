@@ -55,12 +55,6 @@
     width: 100%;
 }
 
-/* Center the submit button */
-.input-box .submitbutton {
-    margin-left: 0px;
-    padding: 11px;
-}
-
 .input-box .submitbutton:hover {
     background-color: var(--gray);
     color: black;
@@ -80,10 +74,10 @@ input[type=number] {
     color: var(--pink);
     font-weight: bold;
     background-color: white;
-    border: none;
-    /* background-color: var(--pink);
-    border: 1px solid var(--gray); */
+    border: 1px solid var(--dark-gray);
     padding: 10px;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
 }
 
 .submitbutton:active {
@@ -95,7 +89,18 @@ input[type=number] {
 .input-input-box {
     height: 37.5px;
     width: 50%;
-    border: none;
+    border: 1px solid var(--dark-gray);
+    border-left: none;
+    border-right: none;
+}
+
+.drop-down {
+    height: 37.5px;
+    background-color: white;
+    border: 1px solid var(--dark-gray);
+    border-right: none;
+    color: var(--dark-gray);
+    border-radius: 5px 0 0 5px;
 }
 
 /* NAV */
