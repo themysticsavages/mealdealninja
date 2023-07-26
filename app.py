@@ -44,8 +44,6 @@ def home():
             "index.html",
             title="Home",
             cards=cards,
-            placeholder=["", "sort"],
-            sorts=sorts,
         )
 
     df = df[df["cost"] < budget]
@@ -87,7 +85,10 @@ def about():
 
 @app.get("/stats")
 def stats():
-    return render_template("stats.html", title="Statistics")
+    return render_template(
+        "stats.html",
+        title="Statistics",
+    )
 
 
 @app.get("/recipe/<recipe_id>")
