@@ -20,6 +20,17 @@
     width: 100%;
 }
 
+
+.fa-fa-fa-fa-fa-fa {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid grey;
+    border-right: none;
+    border-left: none;
+    color: grey;
+    display: inline-block;
+}
+
 /* Center the input box next to the logo on the left */
 .banner {
     display: flex;

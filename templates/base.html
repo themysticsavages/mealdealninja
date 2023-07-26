@@ -32,8 +32,8 @@
                     <option value="{{sort}}" {% if placeholder[1]==sort%} selected {% endif %}>{{sort}}</option>
                     {%endfor%}
                 </select>
-                <i class="fa fa-usd" aria-hidden="true" style="background-color: white; padding: 10px; color: #c9c9c9"></i>
-                <input type="number" placeholder="Enter Preferred Budget ($)" id="budget" name="budget" required
+                <i class="fa fa-usd fa-fa-fa-fa-fa-fa" aria-hidden="true"></i>
+                <input type="number" placeholder="Enter preferred budget" id="budget" name="budget" required
                     class="input-input-box" value="{{placeholder[0]}}" step="0.01" min=0>
                 <button type="submit" class="submitbutton"><i class="fa fa-search"></i> Find My Meal</button>
             </form>
