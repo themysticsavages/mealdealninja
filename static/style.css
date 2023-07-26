@@ -38,13 +38,14 @@
     height: auto;
     /* Allow the logo to scale proportionally */
     margin-right: 20px;
+    flex: 1;
 }
 
 /* Center the input box vertically within the banner */
 .input-box {
     display: flex;
     align-items: center;
-    flex-grow: 1;
+    flex-grow: 2;
     /* Allow the input box to grow and fill the available space */
 }
 
