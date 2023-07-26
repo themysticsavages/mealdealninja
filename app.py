@@ -105,6 +105,7 @@ def recipeinfo(recipe_id):
         except SyntaxError:
             pass
 
+    print(item)
     return render_template("recipe.html", title="Recipe info", data=item)
 
 
