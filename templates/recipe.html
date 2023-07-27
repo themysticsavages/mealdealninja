@@ -14,7 +14,7 @@
     <div class="box goofy">
         <div>
             <h1>${{ data["cost"] }} for {{ data["servings"] }} servings</h1>
-            <h2 style="text-align: center;">Ingredients</h2>
+            <h2>Ingredients</h2>
             <ul>
                 {% for ingredient, price in zip(data["ingredients"], data["Ing. Prices"]) %}
                 <li>{{ ingredient }} ({{ price }})</li>
