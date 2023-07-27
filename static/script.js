@@ -3,7 +3,7 @@ function isScrollAtBottom() {
 }
 
 function loadMoreData(offset, limit) {
-    const contentElement = document.querySelector(".content");
+    const contentElement = document.querySelector(".food");
     let params = new URLSearchParams(window.location.href.split("?")[1])
     fetch(`/cards?sort=${params.get("sort")}&budget=${params.get("budget")}&offset=${offset}&limit=${limit}`)
         .then(res => res.text())

@@ -23,28 +23,39 @@ run_with_ngrok(app)
 Minify(app=app, html=True, js=True, cssless=True)
 
 sorts = {
-        "Sort"  : [["cost", "rating"],  [False, True]], 
-        "Price: Low to High" :[["cost", "rating"],  [True, False]], 
-        "Price: High to Low" :[["cost", "rating"],  [True, False]], 
-        "Rating: High to low" : [["rating", "cost"],  [False, True]], 
-        "Rating: Low to High" : [["rating", "cost"],  [True, False]],
-        }
+    "Sort": [["cost", "rating"], [False, True]],
+    "Price: Low to High": [["cost", "rating"], [True, False]],
+    "Price: High to Low": [["cost", "rating"], [False, True]],
+    "Rating: High to low": [["rating", "cost"], [False, True]],
+    "Rating: Low to High": [["rating", "cost"], [True, False]],
+}
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
     budget = request.args.get("budget", type=float)
-    sort_type = request.args.get("sort", type = str)
+    sort_type = request.args.get("sort", type=str)
 
     df = dataframe()
     if not budget:
         df = df.sort_values(by=["rating", "cost"], ascending=[False, True])
         cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
-        return render_template("index.html", title="Home", cards=cards, placeholder = ["", "sort"], sorts = sorts)
+        return render_template(
+            "index.html",
+            title="Home",
+            cards=cards,
+        )
 
     df = df[df["cost"] < budget]
-    df = df.sort_values(by=sorts[sort_type][0], ascending=sorts[sort_type][1])        
+    df = df.sort_values(by=sorts[sort_type][0], ascending=sorts[sort_type][1])
     cards = df[["title", "cost", " image", " index"]].to_dict(orient="records")[:30]
-    return render_template("index.html", title="Home", cards=cards, placeholder=["{0:.2f}".format(budget), sort_type], sorts = sorts)
+    return render_template(
+        "index.html",
+        title="Home",
+        cards=cards,
+        placeholder=["{0:.2f}".format(budget), sort_type],
+        sorts=sorts,
+    )
 
 
 @app.get("/cards")
@@ -52,7 +63,7 @@ def cards():
     limit = request.args.get("limit", type=int)
     offset = request.args.get("offset", type=int, default=0)
     budget = request.args.get("budget", type=int)
-    sort_type = request.args.get("sort", type = str)
+    sort_type = request.args.get("sort", type=str)
 
     df = dataframe()
     if budget is not None:
@@ -74,7 +85,10 @@ def about():
 
 @app.get("/stats")
 def stats():
-    return render_template("stats.html", title="Statistics")
+    return render_template(
+        "stats.html",
+        title="Statistics",
+    )
 
 
 @app.get("/recipe/<recipe_id>")
@@ -91,6 +105,7 @@ def recipeinfo(recipe_id):
         except SyntaxError:
             pass
 
+    print(item)
     return render_template("recipe.html", title="Recipe info", data=item)
 
 

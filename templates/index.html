@@ -2,21 +2,23 @@
 {% block home %}active{% endblock home %}
 
 {% block content %}
-<div class="cards-con">
-    {% for card in cards %}
-    <div class="cards">
-        <div class="cards-padding-con">
-            <div class="img-con">
-                <a href="/recipe/{{ card[" index"] }}"><img src="{{ card[" image"] }}" alt="" loading="lazy"></a>
-            </div>
-            <div class="cards-text">
-                <h4>{{ card["title"] }}</h4>
-                <p class="cards-cost">Cost: ${{ card["cost"] }}</p>
+<div class="food">
+    <div class="cards-con">
+        {% for card in cards %}
+        <div class="cards">
+            <div class="cards-padding-con">
+                <div class="img-con">
+                    <a href="/recipe/{{ card[" index"] }}"><img src="{{ card[" image"] }}" alt="" loading="lazy"></a>
+                </div>
+                <div class="cards-text">
+                    <h4>{{ card["title"] }}</h4>
+                    <p class="cards-cost">Cost: ${{ card["cost"] }}</p>
+                </div>
             </div>
         </div>
+        <br>
+        {% endfor %}
     </div>
-    <br>
-    {% endfor %}
 </div>
 <div class="silly-gradient-:3"></div>
 <script src="/static/script.js"></script>
